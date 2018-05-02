@@ -12,6 +12,10 @@
     "build-lib": "ng-packagr -p package.json",
     "build-stat": "ng build --stats-json && webpack-bundle-analyzer ./dist/stats.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fulvaz/ng-time-format"
+  },
   "devDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/cli": "~1.7.3",
