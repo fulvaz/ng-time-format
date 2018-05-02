@@ -1,27 +1,62 @@
-# NgMomentMini
+# NgTimeFormat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+formating date with angular internal API: DatePipe.
 
-## Development server
+# usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```javascript
+ imports: [
+    ...
+    NgTimeFormatModule.forRoot(),
+  ],
+```
 
-## Code scaffolding
+```javascript
+constructor(private formatService: NgTimeFormatService) {}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  public formatDate() {
+    // output: 2018 12 13 15 03 32
+    this.timeString = this.formatService.formatDate('2018-12-13 15:03:32', 'yyyy MM dd HH mm ss');
+  }
+```
 
-## Build
+# definitions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## formatDate(date: any, format: string, locale = this.locale): string
 
-## Running unit tests
+date & format: just the same as https://angular.io/api/common/DatePipe, but timezone parameter is ignored.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+locale: use LOCALE_ID by default. For more locales,  see chapter i18n.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# i18n
 
-## Further help
+In app.moudle, registry your locale
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+import localeCN from '@angular/common/locales/zh-Hans';
+import localeExtra from '@angular/common/locales/extra/zh-Hans';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeCN, 'zh-Hans', localeExtra);
+```
+
+to build i18n app dynamically, use `ng build --locale 'your locale code'`
+
+ps: `--locale` will not work in JIT mode.
+
+to work with JIT mode, you need to add provider manully.
+
+```
+{provide: LOCALE_ID, useValue: 'your locale code'},
+```
+
+for more locale codes, see https://unpkg.com/@angular/common@5.2.10/locales/
+
+# demo
+
+git clone this project, and
+
+```
+  npm run start
+```

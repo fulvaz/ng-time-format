@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { NgTimeFormatModule } from '../lib/ng-time-format.module';
+import localeCN from '@angular/common/locales/zh-Hans';
+import localeExtra from '@angular/common/locales/extra/zh-Hans';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeCN, 'zh-Hans', localeExtra);
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgTimeFormatModule.forRoot(),
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
