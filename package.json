@@ -53,6 +53,7 @@
     "zone.js": "^0.8.19"
   },
   "ngPackage": {
+    "dest": "dest",
     "lib": {
       "entryFile": "./src/lib/index.ts"
     }

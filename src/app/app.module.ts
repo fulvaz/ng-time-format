@@ -3,7 +3,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { NgTimeFormatModule } from '../lib/ng-time-format.module';
+import { NgTimeFormatModule } from 'ng-time-format';
 import localeCN from '@angular/common/locales/zh-Hans';
 import localeExtra from '@angular/common/locales/extra/zh-Hans';
 import { registerLocaleData } from '@angular/common';

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgTimeFormatService } from '../lib/ng-time-format.service';
+import { NgTimeFormatService } from 'ng-time-format';
 import * as addDays from 'date-fns/add_days';
 // import {addDays} from 'date-fns';
 

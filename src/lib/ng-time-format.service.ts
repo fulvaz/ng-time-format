@@ -4,11 +4,10 @@ import { DatePipe } from '@angular/common';
 @Injectable()
 export class NgTimeFormatService {
 
-  constructor(private datePipe: DatePipe, @Inject(LOCALE_ID) private locale: string) {
+  constructor(private datePipe: DatePipe) {
   }
 
-  formatDate(date: any, format: string, locale = this.locale): string {
-    console.log(locale);
+  formatDate(date: any, format: string): string {
     return this.datePipe.transform(date, format);
   }
 }
