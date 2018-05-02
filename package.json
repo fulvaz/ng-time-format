@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-lib": "ng-packagr -p package.json",
-    "build-stat": "ng build --stats-json && webpack-bundle-analyzer ./dist/stats.json"
+    "build-stat": "ng build --stats-json && webpack-bundle-analyzer ./dist/stats.json",
+    "analyze-bundle": "webpack-bundle-analyzer ./dist/stats.json"
   },
   "repository": {
     "type": "git",

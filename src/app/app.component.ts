@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgTimeFormatService } from '../lib/ng-time-format.service';
 import * as addDays from 'date-fns/add_days';
+// import {addDays} from 'date-fns';
 
 @Component({
   selector: 'app-root',

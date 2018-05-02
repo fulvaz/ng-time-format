@@ -22,7 +22,7 @@ constructor(private formatService: NgTimeFormatService) {}
 
 # definitions
 
-## formatDate(date: any, format: string, locale = this.locale): string
+## formatDate(date: any, format: string): string
 
 date & format: just the same as https://angular.io/api/common/DatePipe, but timezone parameter is ignored.
 
